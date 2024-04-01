@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>To my Baby</title>
+<style>
+    body {
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: #f0f0f0;
+    }
+    .container {
+        text-align: center;
+        position: relative;
+    }
+    #question {
+        font-size: 24px;
+        margin-bottom: 20px;
+    }
+    button {
+        padding: 10px 20px;
+        font-size: 16px;
+        background-color: #4CAF50;
+        color: white;
+        border: none;
+        cursor: pointer;
+        border-radius: 5px;
+    }
+    button:hover {
+        background-color: #45a049;
+    }
+
+    /* Responsive styles */
+    @media screen and (max-width: 600px) {
+        #question {
+            font-size: 18px; 
+        }
+        button {
+            padding: 8px 16px;
+            font-size: 14px; 
+        }
+    }
+</style>
+</head>
+<body>
+<div class="container">
+    <div id="question">Do you Love me?</div>
+    <button id="yesBtn">Yes</button>
+    <button id="noBtn">No</button>
+</div>
+
+<script>
+    let yesBtnSize = 16;
+
+    function askQuestion() {
+        yesBtnSize += 10; 
+        document.getElementById("yesBtn").style.fontSize = yesBtnSize + "px";
+        document.getElementById("question").innerText = "Do you love me?";
+    }
+
+    function resetYesButton() {
+        yesBtnSize = 16; 
+        document.getElementById("yesBtn").style.fontSize = yesBtnSize + "px";
+    }
+
+    document.getElementById("noBtn").addEventListener("click", function() {
+        askQuestion();
+        changeNoButtonPosition();
+    });
+
+    document.getElementById("yesBtn").addEventListener("click", function() {
+        alert("That's so sweet! i love you moree baby 😊");
+        resetYesButton();
+    });
+</script>
+</body>
+</html>
